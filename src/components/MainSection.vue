@@ -4,7 +4,7 @@
         <ol class="shop-wrap">
             <li class="shop-item" v-for="(item, i) in shopList" :key="i">
                 <figure class="shop-item-logo">
-                    <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+                    <img :src="require('../assets/img/' + item.image)" alt="">
                 </figure>
                 <div class="shop-item-title">
                     <a :href="item.ancora">
@@ -73,11 +73,12 @@ section {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
             width: calc(96% / 5);
 
             .shop-item-logo {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 60px;
 
                 img {
                     margin: 0 auto;
