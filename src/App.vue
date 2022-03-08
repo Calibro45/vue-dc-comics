@@ -7,6 +7,7 @@
     <!-- section acquisti -->
     <mainSection />
     <!-- footer -->
+    <mainFooter />
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import mainHeader from './components/MainHeader.vue';
 import mainContent from './components/MainContent.vue';
 import mainSection from './components/MainSection.vue';
+import mainFooter from './components/MainFooter.vue';
 
 export default {
   name: 'App',
@@ -21,6 +23,7 @@ export default {
     mainHeader,
     mainContent,
     mainSection,
+    mainFooter,
   }
 }
 </script>
