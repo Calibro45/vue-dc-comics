@@ -5,7 +5,9 @@
                 <img src="../assets/img/dc-logo.png" alt="">
             </figure>
             <ol class="main-nav">
-                <li class="nav-link" v-for="(link, i) in navLink" :key="i">
+                <li :class="['nav-link',(activeIndex === i) ? 'active' : '' ]" 
+                v-for="(link, i) in navLink" :key="i"
+                @click="activeElement(i)">
                     <a :href="link.anchor">{{ link.textLink }}</a>
                 </li>
             </ol>
@@ -19,6 +21,7 @@ export default {
 
     data() {
         return {
+            activeIndex: 0,
             navLink: [
                 {
                     anchor: '#',
@@ -64,6 +67,12 @@ export default {
             ],
         };
     },
+
+    methods: {
+        activeElement: function(i) {
+            this.activeIndex = i;
+        },
+    }
 }
 </script>
 
