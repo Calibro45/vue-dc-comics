@@ -5,35 +5,8 @@
                 <img src="../assets/img/dc-logo.png" alt="">
             </figure>
             <ol class="main-nav">
-                <li class="nav-link">
-                    <a href="#">character</a>
-                </li>
-                <li class="nav-link active">
-                    <a href="#">comics</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">movies</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">tv</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">games</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">collectibles</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">videos</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">fans</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">news</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">shop</a>
+                <li class="nav-link" v-for="(link, i) in navLink" :key="i">
+                    <a :href="link.anchor">{{ link.textLink }}</a>
                 </li>
             </ol>
         </div>
@@ -43,7 +16,54 @@
 <script>
 export default {
     name: 'mainHeader',
-    
+
+    data() {
+        return {
+            navLink: [
+                {
+                    anchor: '#',
+                    textLink: 'character'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'comics'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'movies'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'tv'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'games'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'collectibles'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'videos'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'fans'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'news'
+                },
+                 {
+                    anchor: '#',
+                    textLink: 'shop'
+                },
+
+            ],
+        };
+    },
 }
 </script>
 
@@ -73,6 +93,7 @@ export default {
             font-size: 14px;
             font-weight: 700;
             position: relative;
+            color: #464646;
 
             &.active {
                 color: #579cfa
