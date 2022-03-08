@@ -3,6 +3,7 @@
     <!-- header -->
     <mainHeader />
     <!-- main conent -->
+    <mainContent />
     <!-- section acquisti -->
     <!-- footer -->
   </div>
@@ -10,13 +11,13 @@
 
 <script>
 import mainHeader from './components/MainHeader.vue';
-//import HelloWorld from './components/HelloWorld.vue'
+import mainContent from './components/MainContent.vue';
 
 export default {
   name: 'App',
   components: {
     mainHeader,
-
+    mainContent,
   }
 }
 </script>

@@ -115,7 +115,7 @@ export default {
                 background-color: #579cfa;
                 width: calc(100% - 20px);
                 position: absolute;
-                bottom: -100%;
+                bottom: calc(-100% - 17px);
             }
 
             &:hover {
