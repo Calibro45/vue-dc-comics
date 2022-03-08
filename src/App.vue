@@ -5,6 +5,7 @@
     <!-- main conent -->
     <mainContent />
     <!-- section acquisti -->
+    <mainSection />
     <!-- footer -->
   </div>
 </template>
@@ -12,12 +13,14 @@
 <script>
 import mainHeader from './components/MainHeader.vue';
 import mainContent from './components/MainContent.vue';
+import mainSection from './components/MainSection.vue';
 
 export default {
   name: 'App',
   components: {
     mainHeader,
     mainContent,
+    mainSection,
   }
 }
 </script>
@@ -48,10 +51,7 @@ a {
 img {
   max-width: 100%;
   height: 100%;
-}
-
-.container-fluid {
-  width: 100%;
+  display: block;
 }
 
 .container {

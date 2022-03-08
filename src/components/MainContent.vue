@@ -1,5 +1,5 @@
 <template>
-    <main class="container-fluid main-content-wrap">
+    <main class="main-content-wrap">
         <div class="container">
             <p>{{ text }}</p>
         </div>
@@ -21,6 +21,7 @@ export default {
 .main-content-wrap {
     background-color: #1c1c1c;
     padding: 50px 5px;
+    width: 100%;
 
     p {
         font-size: 36px;
