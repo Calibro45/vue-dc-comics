@@ -3,14 +3,23 @@
         <section class="jumbotron">
         </section>
         <section id="comics">
-
+            <div class="container">
+                <comicsCard />
+            </div>
         </section>
     </main>
 </template>
 
 <script>
+import comicsCard from './ComicsCard.vue';
+
 export default {
+
     name: 'mainContent',
+    components: {
+        comicsCard
+        },
+
     data() {
         return {
             comicsList: [
@@ -98,6 +107,17 @@ export default {
     min-height: 400px;
     background-image: url('../assets/img/jumbotron.jpg');
     background-size: cover;
+}
+
+#comics {
+    min-height: 500px;
+    background-color: #1c1c1c;
+    padding: 50px 5px;
+
+    .container {
+        display: flex;
+        gap: 1%;
+    }
 }
 
 
