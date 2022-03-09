@@ -15,7 +15,7 @@
                 </li>
             </ol>
             </nav>
-            
+
         </div>
     </header>
 </template>
@@ -82,6 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/mixins.scss';
 
 .main-header {
     padding: 0 10px;
@@ -123,13 +124,13 @@ export default {
                 }
 
                 &.active, &:hover {
-                    color: #0282f9;
+                    color: $primaryColor;
 
                     a::after {
                         content: '';
                         display: block;
                         height: 5px;
-                        background-color: #0282f9;
+                        background-color: $primaryColor;
                         position: absolute;
                         bottom: 0;
                         left: 0;

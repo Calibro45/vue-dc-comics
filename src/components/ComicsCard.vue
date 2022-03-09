@@ -39,4 +39,18 @@ export default {
     }
 }
 
+@media screen and (max-width: 768px) {
+    
+    .comics-card-wrap {
+        width: calc(98% / 3);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+    .comics-card-wrap {
+        width: 100%;
+    }
+}
+
 </style>

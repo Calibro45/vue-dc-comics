@@ -39,13 +39,13 @@
 
         <section id="info">
             <div class="container">
-                <div>
+                <div class="login">
                     <button class="sign-in">sign-up now!</button>
                 </div>
+                <div class="social-item">
+                    <h3>Follow Us</h3>
+                </div>
                 <ol class="social">
-                    <li class="social-item">
-                        <h3>Follow Us</h3>
-                    </li>
                     <li class="social-item" v-for="(icon, i) in socialLink" :key="i">
                         <a href="#">
                             <img :src="require('../assets/img/' + icon.image)" alt="">
@@ -54,7 +54,7 @@
                 </ol>
             </div>
         </section>
-        
+
     </footer>
 </template>
 
@@ -205,6 +205,7 @@ export default {
 </script>
 
 <style lang="scss" scped>
+@import '../assets/scss/mixins.scss';
 
 #contatti {
     background-image: url('../assets/img/footer-bg.jpg');
@@ -248,19 +249,27 @@ export default {
     .container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 20px;
 
-        .sign-in {
-            background-color: transparent;
-            color: #fff;
-            padding: 15px;
-            border: 2px solid #027adc;
-            text-transform: uppercase;
-            font-weight: 700;
+        .login {
+            flex-grow: 1;
+            
+            .sign-in {
+                background-color: transparent;
+                color: #fff;
+                padding: 15px;
+                border: 2px solid $primaryColor;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
 
             &:hover {
                 cursor: pointer;
-            }
+            }   
+        }
+        h3 {
+            color: $primaryColor;
+            text-transform: uppercase;
         }
 
         .social {
@@ -269,13 +278,29 @@ export default {
             gap: 20px;
 
             .social-item {
-                padding: 5px 8px;
+                width: 40px;
 
-                h3 {
-                    color: #027adc;
-                    text-transform: uppercase;
-                }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #contatti {
+
+        .contact-wrap {
+            width: 33%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    #info {
+
+        .container {
+            flex-direction: column;
         }
     }
 }

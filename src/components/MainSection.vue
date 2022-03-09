@@ -58,17 +58,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/mixins.scss';
 
 section {
     width: 100%;
-    background-color: #0282f9;
+    background-color: $primaryColor;
     padding: 50px 10px;
     color: #fff;
 
     .shop-wrap {
         display: flex;
         align-items: center;
-        gap: 1%;
+        gap: 20px 1%;
         padding: 10px 40px;
 
         .shop-item {
@@ -96,6 +97,43 @@ section {
                     font-weight: 400;
                     padding: 5px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .shop-item {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    section {
+
+        .shop-wrap{
+
+            flex-wrap: wrap;
+
+            .shop-item {
+                width: calc(97% / 4);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    section {
+
+        .shop-wrap{
+
+            flex-wrap: wrap;
+
+            .shop-item {
+                width: calc(99% / 2);
             }
         }
     }
