@@ -1,18 +1,20 @@
 <template>
     <section>
         <div class="container">
-        <ol class="shop-wrap">
-            <li class="shop-item" v-for="(item, i) in shopList" :key="i">
-                <figure class="shop-item-logo">
-                    <img :src="require('../assets/img/' + item.image)" alt="">
-                </figure>
-                <div class="shop-item-title">
-                    <a :href="item.ancora">
-                        <h4>{{ item.title }}</h4>
-                    </a>
-                </div>
-            </li>
-        </ol>
+
+            <ol class="shop-wrap">
+                <li class="shop-item" v-for="(item, i) in shopList" :key="i">
+                    <figure class="shop-item-logo">
+                        <img :src="require('../assets/img/' + item.image)" alt="">
+                    </figure>
+                    <div class="shop-item-title">
+                        <a :href="item.ancora">
+                            <h4>{{ item.title }}</h4>
+                        </a>
+                    </div>
+                </li>
+            </ol>
+
         </div>
     </section>
 </template>

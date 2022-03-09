@@ -2,6 +2,7 @@
     <footer>
         <section id="contatti">
             <div class="container">
+
                 <div class="contact-wrap">
                     <h3 class="contact-title">{{ linkTitle[0] }}</h3>
                     <ol class="contact-list">
@@ -32,8 +33,10 @@
                         </li>
                     </ol>
                 </div>
+
             </div>
         </section>
+
         <section id="info">
             <div class="container">
                 <div>
@@ -51,6 +54,7 @@
                 </ol>
             </div>
         </section>
+        
     </footer>
 </template>
 

@@ -1,12 +1,23 @@
 <template>
     <main class="main-content-wrap">
+
         <section class="jumbotron">
+            <div class="container">
+                <button class="current-cta">Current Series</button>
+            </div>
         </section>
+
         <section id="comics">
             <div class="container">
+
                 <comicsCard v-for="(el, i) in comicsList" :key="i"
                 :thumbs="el.thumb"
                 :series="el.series"/>
+
+                <div class="comics-cta">
+                    <button>load more</button>
+                </div>
+
             </div>
         </section>
     </main>
@@ -105,10 +116,31 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../assets/scss/mixins.scss';
+
 .jumbotron {
-    min-height: 400px;
+    height: 400px;
     background-image: url('../assets/img/jumbotron.jpg');
     background-size: cover;
+
+    .container {
+        height: 100%;
+        position: relative;
+        padding: 0px 5px;
+
+        .current-cta {
+            @include button;
+            padding: 15px 30px;
+            font-size: 18px;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 #comics {
@@ -120,6 +152,21 @@ export default {
         display: flex;
         flex-wrap: wrap;
         gap: 20px 1%;
+
+        .comics-cta {
+            text-align: center;
+            flex-grow: 1;
+
+            button {
+                padding: 10px 35px;
+                @include button;
+                font-size: 12px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 

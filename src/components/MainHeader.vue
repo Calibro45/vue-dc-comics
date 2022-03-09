@@ -1,9 +1,11 @@
 <template>
     <header class="main-header">
         <div class="container">
+
             <figure class="logo">
                 <img src="../assets/img/dc-logo.png" alt="">
             </figure>
+
             <nav class="main-nav">
             <ol>
                 <li :class="['nav-link',(activeIndex === i) ? 'active' : '' ]" 
@@ -13,6 +15,7 @@
                 </li>
             </ol>
             </nav>
+            
         </div>
     </header>
 </template>
