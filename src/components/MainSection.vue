@@ -77,7 +77,6 @@ section {
             width: calc(96% / 5);
 
             .shop-item-logo {
-                width: 60px;
                 height: 60px;
 
                 img {
