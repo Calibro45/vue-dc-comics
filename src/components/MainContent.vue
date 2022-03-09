@@ -4,7 +4,9 @@
         </section>
         <section id="comics">
             <div class="container">
-                <comicsCard />
+                <comicsCard v-for="(el, i) in comicsList" :key="i"
+                :thumbs="el.thumb"
+                :series="el.series"/>
             </div>
         </section>
     </main>
@@ -116,7 +118,8 @@ export default {
 
     .container {
         display: flex;
-        gap: 1%;
+        flex-wrap: wrap;
+        gap: 20px 1%;
     }
 }
 
