@@ -1,16 +1,18 @@
 <template>
-    <header>
-        <div class="container nav-wrapper">
+    <header class="main-header">
+        <div class="container">
             <figure class="logo">
                 <img src="../assets/img/dc-logo.png" alt="">
             </figure>
-            <ol class="main-nav">
+            <nav class="main-nav">
+            <ol>
                 <li :class="['nav-link',(activeIndex === i) ? 'active' : '' ]" 
                 v-for="(link, i) in navLink" :key="i"
                 @click="activeElement(i)">
                     <a :href="link.anchor">{{ link.textLink }}</a>
                 </li>
             </ol>
+            </nav>
         </div>
     </header>
 </template>
@@ -78,49 +80,59 @@ export default {
 
 <style lang="scss" scoped>
 
-.nav-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 5px;
+.main-header {
+    padding: 0 10px;
 
-    .logo {
-        width: 85px;
-        height: 85px;
-        flex-shrink: 0;
-    }
-
-    .main-nav {
+    .container {
         display: flex;
-        align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 110px;
+        gap: 20px;
 
-        .nav-link {
-            padding: 5px 10px;
-            text-transform: uppercase;
-            font-size: 14px;
-            font-weight: 700;
-            position: relative;
-            color: #464646;
+        .logo {
+            width: 85px;
+            height: 85px;
+            align-self: center;
+            flex-shrink: 0;
+        }
 
-            &.active {
-                color: #579cfa
+        .main-nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            ol {
+                display: contents;
             }
 
-            &.active::after {
-                content: '';
-                display: block;
-                height: 5px;
-                background-color: #579cfa;
-                width: calc(100% - 20px);
-                position: absolute;
-                bottom: calc(-100% - 17px);
-            }
+            .nav-link {
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700;
+                color: #464646;
+                position: relative;
 
-            &:hover {
-                cursor: pointer;
-                color: #579cfa;
+                a {
+                    display: block;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+
+                &.active, &:hover {
+                    color: #0282f9;
+
+                    a::after {
+                        content: '';
+                        display: block;
+                        height: 5px;
+                        background-color: #0282f9;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                }
             }
         }
     }
