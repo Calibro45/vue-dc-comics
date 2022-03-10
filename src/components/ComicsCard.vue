@@ -24,7 +24,13 @@ export default {
     padding: 5px;
 
     .card-header {
-        aspect-ratio: 1;
+        
+        img {
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center;
+            
+        }
     }
 
     .card-body {
